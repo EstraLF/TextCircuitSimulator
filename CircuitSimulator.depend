@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1604371214 source:c:\users\luis estrada\desktop\circuitsimulator\main.c
+	"simulator.h"
+	<stdio.h>
+	<stdlib.h>
+
+1604448376 c:\users\luis estrada\desktop\circuitsimulator\simulator.h
+
+1604450163 source:c:\users\luis estrada\desktop\circuitsimulator\simulator.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	"simulator.h"
+	"formatting.h"
+
+1604446131 c:\users\luis estrada\desktop\circuitsimulator\formatting.h
+
+1604446218 source:c:\users\luis estrada\desktop\circuitsimulator\formatting.c
+	<stdlib.h>
+	<stdio.h>
+	"formatting.h"
+
