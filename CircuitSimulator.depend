@@ -6,7 +6,7 @@
 
 1604448376 c:\users\luis estrada\desktop\circuitsimulator\simulator.h
 
-1604450163 source:c:\users\luis estrada\desktop\circuitsimulator\simulator.c
+1604790366 source:c:\users\luis estrada\desktop\circuitsimulator\simulator.c
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
@@ -15,7 +15,7 @@
 
 1604446131 c:\users\luis estrada\desktop\circuitsimulator\formatting.h
 
-1604446218 source:c:\users\luis estrada\desktop\circuitsimulator\formatting.c
+1604626522 source:c:\users\luis estrada\desktop\circuitsimulator\formatting.c
 	<stdlib.h>
 	<stdio.h>
 	"formatting.h"

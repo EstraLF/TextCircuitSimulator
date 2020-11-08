@@ -10,7 +10,7 @@ void formatTableHeader(void) {
 
         char spacing[18] = "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
         char headerBorder[80] =
-        "/==================================================================/";
+        "/******************************************************************/";
 
         printf("%s\n", headerBorder);
         printf("%sCircuit Simulation Data\n\n", spacing);
@@ -23,7 +23,7 @@ void formatTableFooter(void) {
         /* Function that prints the footer of the data display table*/
         char spacing[18] = "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
         char footerBorder[80] =
-        "/==================================================================/";
+        "/******************************************************************/";
 
         printf("%s\n", footerBorder);
         printf("%s\n", footerBorder);
@@ -70,7 +70,7 @@ void formatValue(float value) {
 void border(void) {
 
         char borderDesign[80] =
-        "====================================================================";
+        "********************************************************************";
 
         printf("%s\n",borderDesign);
 }

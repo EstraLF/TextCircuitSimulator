@@ -11,7 +11,9 @@ char getCircuitType(void) {
          'S' for a series circuit and a 'P' for a parallel circuit*/
 
         char circuitType;
+        border();
         printf("Select circuit type 'S' for series 'P' for parallel:\n");
+        border();
         scanf("%c", &circuitType);
         return circuitType;
 
@@ -21,6 +23,7 @@ char getCircuitType(void) {
 char getSourceType(void) {
 
         char sourceType;
+        border();
         printf("What kind of source 'V' for voltage 'I' for current:\n");
         scanf("%c",&sourceType);
         getchar();
@@ -33,6 +36,7 @@ int getResistors(void) {
         circuit and returns that number as an integer*/
 
         int resistors;
+        border();
         printf("How many resistors will be in the circuit?:\n");
         scanf("%d", &resistors);
         getchar();
@@ -46,6 +50,7 @@ float getVoltageLevel(void) {
         in the circuit*/
 
         float voltage;
+        border();
         printf("What is the voltage of the source?:\n");
         scanf("%f", &voltage);
         return voltage;
@@ -58,6 +63,7 @@ float getCurrentLevel(void) {
         in the circuit*/
 
         float current;
+        border();
         printf("What is the current of the source?:\n");
         scanf("%f", &current);
         return current;
@@ -106,6 +112,7 @@ void setSeriesCircuit(int resistors) {
 
          // Ask the user to set the resistance of each resistor
          for(int i = 0; i < resistors; i++) {
+                border();
                 printf("Enter the resistance of R%d:\n", i+1);
                 scanf("%f", &userResistors[i].reistance);
          } // end for
@@ -228,6 +235,7 @@ void setParallelCircuit(int resistors) {
 
          // Ask the user to set the resistance of each resistor
          for(int i = 0; i < resistors; i++) {
+                border();
                 printf("Enter the resistance of R%d:\n", i+1);
                 scanf("%f", &userResistors[i].reistance);
          } // end for
@@ -258,36 +266,59 @@ void setParallelCircuit(int resistors) {
          circuitPower = (float)(pow(userCurrentSource.current, 2))*
                 circuitResistance;
 
-         } else {
+        } else {
 
          // Circuit voltage is simply the value of the V source
-         circuitVoltage = userVoltageSource.voltage;
+                circuitVoltage = userVoltageSource.voltage;
 
          // Circuit current is Icircuit = Vcircuit/Rcircuit
-         circuitCurrent = circuitVoltage/(circuitResistance);
+                circuitCurrent = circuitVoltage/(circuitResistance);
 
          // Circuit power is Pcircuit = (Vcircuit)^(2) / Rcircuit
-         circuitPower = (float)(pow(userVoltageSource.voltage,2)/
+                circuitPower = (float)(pow(userVoltageSource.voltage,2)/
                                 circuitResistance);
 
-         } // end if else
+        } // end if else
 
           // Display table header
-          formatTableHeader();
+        formatTableHeader();
 
            // Individual current draw
-          for(int k= 0; k < resistors; k++) {
-                printf("\t\tR%d is drawing %f Amps\n", k+1,
+        for(int k= 0; k < resistors; k++) {
+                printf("\tR%d is drawing %f Amps\n", k+1,
                 circuitVoltage/(userResistors[k].reistance));
-          } // end for
+        } // end for
 
-          border();
+        border();
 
           // Individual power consumption
-          for(int l = 0; l < resistors; l++) {
-                printf("\t\tR%d is consuming %f Watts\n", l+1,
-                pow(circuitCurrent, 2)*(userResistors[l].reistance));
-          } // end for
+        for(int l = 0; l < resistors; l++) {
+                printf("\tR%d is consuming %f Watts\n", l+1,
+                pow(circuitVoltage, 2)/(userResistors[l].reistance));
+        } // end for
+
+         // Display circuit values
+
+        border();
+        newLine();
+
+        // Circuit resistance
+        spacing();
+        printf("The circuit resistance is %f Ohms \n", circuitResistance);
+
+        // Circuit voltage
+        spacing();
+        printf("The circuit voltage is %f Volts \n", circuitVoltage);
+
+        // Circuit current
+        spacing();
+        printf("The circuit current is %f Amps \n", circuitCurrent);
+
+        // Circuit power
+        spacing();
+        printf("The circuit is consuming %f Watts \n", circuitPower);
+
+        newLine();
 
           // Display table footer
           formatTableFooter();
